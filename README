@@ -1,0 +1,4 @@
+XBody + Edgestash performance test
+
+Load: wrk -c 4 -t 4 -d 10s http://localhost:8888/
+Response times: varnishlog -c -d -i Timestamp | grep Resp | awk '{tot+=$5}END{print tot/NR}'
